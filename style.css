@@ -233,3 +233,32 @@ code {
     padding: 2px 4px;
     border-radius: 4px;
 }
+
+/* --- ESTILOS RESPONSIVOS --- */
+/* As regras dentro deste bloco só serão aplicadas em telas com 768px de largura ou menos. */
+@media (max-width: 768px) {
+
+    /* 1. Ajusta o conteúdo principal */
+    main {
+        /* Reduz o espaçamento lateral para dar mais espaço ao conteúdo. */
+        padding: 20px 15px;
+    }
+
+    /* 2. Ajusta a barra de navegação */
+    nav ul {
+        /* Reduz o espaço entre os links do menu para que caibam melhor. */
+        gap: 10px 15px; /* Gap vertical e horizontal */
+    }
+
+    nav ul li a {
+        /* Diminui um pouco a fonte dos links para economizar espaço. */
+        font-size: 0.95em;
+    }
+
+    /* 3. Ajusta os itens de exemplo para evitar overflow */
+    .flex-item {
+        /* Reduz o padding e a fonte para que o texto não quebre de forma estranha. */
+        padding: 10px 8px;
+        font-size: 0.9em;
+    }
+}
