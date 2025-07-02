@@ -14,9 +14,14 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#prop-direction">flex-direction</a></li>
+                <li><a href="#prop-justify">justify-content</a></li>
+                <li><a href="#prop-align">align-items</a></li>
+                <li><a href="#prop-grow">flex-grow</a></li>
+                <li><a href="#prop-wrap">flex-wrap</a></li>
+                <li><a href="#prop-order">order</a></li>
+                <li><a href="#prop-shrink">flex-shrink</a></li>
+                <li><a href="#prop-self">align-self</a></li>
             </ul>
         </nav>
         <main>
@@ -24,7 +29,7 @@
             <p>Explore as principais propriedades do Flexbox com exemplos visuais. Cada seção abaixo demonstra um conceito diferente, aplicado a um container cinza e seus itens azuis.</p>
 
             <!-- 1. flex-direction -->
-            <section class="explanation-section">
+            <section id="prop-direction" class="explanation-section">
                 <h3>1. Direção dos Itens (<code>flex-direction</code>)</h3>
                 <p>Define a direção em que os itens são organizados. O padrão é <code>row</code> (linha).</p>
                 
@@ -49,7 +54,7 @@
             </section>
 
             <!-- 2. justify-content -->
-            <section class="explanation-section">
+            <section id="prop-justify" class="explanation-section">
                 <h3>2. Alinhamento no Eixo Principal (<code>justify-content</code>)</h3>
                 <p>Distribui os itens ao longo do eixo principal (a linha, no nosso caso).</p>
 
@@ -67,7 +72,7 @@
             </section>
 
             <!-- 3. align-items -->
-            <section class="explanation-section">
+            <section id="prop-align" class="explanation-section">
                 <h3>3. Alinhamento no Eixo Cruzado (<code>align-items</code>)</h3>
                 <p>Alinha os itens no eixo perpendicular (a coluna, no nosso caso). Para ver o efeito, o container precisa de uma altura definida.</p>
 
@@ -82,7 +87,7 @@
             </section>
 
             <!-- 4. flex-grow -->
-            <section class="explanation-section">
+            <section id="prop-grow" class="explanation-section">
                 <h3>4. Crescimento do Item (<code>flex-grow</code>)</h3>
                 <p>Permite que um item "cresça" para ocupar o espaço livre no container. É uma propriedade do <strong>item</strong>, não do container.</p>
                 <p>Abaixo, o item 2 tem <code>flex-grow: 2</code> e os outros têm <code>flex-grow: 1</code>. Ele ocupará o dobro do espaço livre que os outros.</p>
@@ -102,7 +107,7 @@
             </section>
 
             <!-- 5. flex-wrap -->
-            <section class="explanation-section">
+            <section id="prop-wrap" class="explanation-section">
                 <h3>5. Quebra de Linha (<code>flex-wrap</code>)</h3>
                 <p>Por padrão, os itens tentam caber em uma única linha. Com <code>flex-wrap: wrap;</code>, eles quebram para a linha seguinte quando não há mais espaço.</p>
 
@@ -116,7 +121,7 @@
             </section>
 
             <!-- 6. order -->
-            <section class="explanation-section">
+            <section id="prop-order" class="explanation-section">
                 <h3>6. Ordem dos Itens (<code>order</code>)</h3>
                 <p>Muda a ordem visual de um item sem alterar o HTML. Por padrão, todos têm <code>order: 0</code>. Números menores vêm primeiro.</p>
                 <p>No HTML: Item A, Item B, Item C. Visualmente, a ordem é B, A, C.</p>
@@ -136,7 +141,7 @@
             </section>
 
             <!-- 7. flex-shrink -->
-            <section class="explanation-section">
+            <section id="prop-shrink" class="explanation-section">
                 <h3>7. Encolhimento do Item (<code>flex-shrink</code>)</h3>
                 <p>Define a capacidade de um item encolher se necessário, quando não há espaço suficiente no container. O padrão é <code>1</code>. Um valor <code>0</code> impede o encolhimento.</p>
                 <p>Abaixo, todos os itens têm uma base de <code>150px</code>. O Item 3 (<code>shrink: 0</code>) não encolhe, e o Item 2 (<code>shrink: 2</code>) encolhe o dobro do que o Item 1.</p>
@@ -156,7 +161,7 @@
             </section>
 
             <!-- 8. align-self -->
-            <section class="explanation-section">
+            <section id="prop-self" class="explanation-section">
                 <h3>8. Auto-alinhamento do Item (<code>align-self</code>)</h3>
                 <p>Permite que um item específico anule o <code>align-items</code> definido no container. É uma propriedade do <strong>item</strong>.</p>
                 <p>O container abaixo tem <code>align-items: center</code>, mas o Item 2 está alinhado ao início (<code>flex-start</code>) e o Item 3 ao fim (<code>flex-end</code>).</p>
@@ -178,5 +183,6 @@
         <footer>
             <p>Rodapé - Sempre no final da página.</p>
         </footer>
+        <script src="script.js" defer></script>
     </body>
 </html>

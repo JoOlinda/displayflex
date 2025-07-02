@@ -1,4 +1,9 @@
 /* Reset básico e estilos gerais do corpo da página */
+html {
+    /* Habilita a rolagem suave para links de âncora em toda a página */
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -22,12 +27,21 @@ header {
 
 nav {
     background-color: #333;
+
+    /* --- NAVEGAÇÃO FIXA (STICKY) --- */
+    position: sticky; /* Faz o elemento "grudar" na tela ao rolar. */
+    top: 0;           /* Define que ele vai grudar no topo (0px do topo). */
+    z-index: 1000;    /* Garante que a navegação fique sobre outros elementos. */
+
+    /* Um pequeno sombreamento para dar profundidade quando a página rola por baixo. */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 /* --- CONCEITO 2: Barra de Navegação Horizontal --- */
 nav ul {
     display: flex;              /* Transforma a lista <ul> em um flex container. */
     justify-content: center;    /* Centraliza os itens (os <li>) no eixo principal (horizontal). */
+    flex-wrap: wrap;            /* Permite que os links quebrem a linha em telas menores. */
     gap: 30px;                  /* Adiciona um espaço consistente entre os itens. */
     
     /* Estilos para remover a aparência padrão de lista */
@@ -45,6 +59,12 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+/* Estilo para o link do menu que corresponde à seção visível na tela */
+nav ul li a.active {
+    color: #ffc107; /* Um amarelo vibrante para destaque */
+    text-decoration: none;
 }
 
 /* --- CONCEITO 3: Conteúdo Principal Flexível --- */
@@ -68,6 +88,14 @@ main {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Destaque para a seção ativa, seja por clique (:target) ou por rolagem (.section-active) */
+.explanation-section:target,
+.explanation-section.section-active {
+    border-color: #0056b3;
+    box-shadow: 0 0 12px rgba(0, 86, 179, 0.25);
 }
 
 .explanation-section h3 {
