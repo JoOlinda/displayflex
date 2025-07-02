@@ -151,6 +151,34 @@ main {
     background-color: #fd7e14;
 }
 
+/* 7. flex-shrink (propriedade do item) */
+.shrink-0, .shrink-1, .shrink-2 {
+    flex-basis: 150px; /* Base de tamanho para forçar o encolhimento */
+}
+.shrink-0 {
+    flex-shrink: 0;
+    background-color: #dc3545;
+}
+.shrink-1 {
+    flex-shrink: 1;
+    background-color: #17a2b8;
+}
+.shrink-2 {
+    flex-shrink: 2;
+    background-color: #ffc107;
+    color: #333;
+}
+
+/* 8. align-self (propriedade do item) */
+.self-start {
+    align-self: flex-start;
+    background-color: #6f42c1;
+}
+.self-end {
+    align-self: flex-end;
+    background-color: #fd7e14;
+}
+
 footer {
     background-color: #333;
     color: white;

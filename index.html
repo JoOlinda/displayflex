@@ -108,6 +108,30 @@
                     <div class="flex-item order-3">Item C (order: 3)</div>
                 </div>
             </section>
+
+            <!-- 7. flex-shrink -->
+            <section class="explanation-section">
+                <h3>7. Encolhimento do Item (<code>flex-shrink</code>)</h3>
+                <p>Define a capacidade de um item encolher se necessário, quando não há espaço suficiente no container. O padrão é <code>1</code>. Um valor <code>0</code> impede o encolhimento.</p>
+                <p>Abaixo, todos os itens têm uma base de <code>150px</code>. O Item 3 (<code>shrink: 0</code>) não encolhe, e o Item 2 (<code>shrink: 2</code>) encolhe o dobro do que o Item 1.</p>
+                <div class="flex-example-container">
+                    <div class="flex-item shrink-1">Item 1 (shrink: 1)</div>
+                    <div class="flex-item shrink-2">Item 2 (shrink: 2)</div>
+                    <div class="flex-item shrink-0">Item 3 (shrink: 0)</div>
+                </div>
+            </section>
+
+            <!-- 8. align-self -->
+            <section class="explanation-section">
+                <h3>8. Auto-alinhamento do Item (<code>align-self</code>)</h3>
+                <p>Permite que um item específico anule o <code>align-items</code> definido no container. É uma propriedade do <strong>item</strong>.</p>
+                <p>O container abaixo tem <code>align-items: center</code>, mas o Item 2 está alinhado ao início (<code>flex-start</code>) e o Item 3 ao fim (<code>flex-end</code>).</p>
+                <div class="flex-example-container align-center" style="height: 120px;">
+                    <div class="flex-item">Item 1 (padrão)</div>
+                    <div class="flex-item self-start">Item 2 (self: start)</div>
+                    <div class="flex-item self-end">Item 3 (self: end)</div>
+                </div>
+            </section>
         </main>
         <footer>
             <p>Rodapé - Sempre no final da página.</p>
