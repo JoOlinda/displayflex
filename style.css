@@ -1,0 +1,165 @@
+/* Reset básico e estilos gerais do corpo da página */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    color: #333;
+
+    /* --- CONCEITO 1: Layout de Página com Flexbox --- */
+    display: flex;          /* Transforma o <body> em um flex container. */
+    flex-direction: column; /* Alinha os filhos (header, nav, main, footer) em uma coluna. */
+    min-height: 100vh;      /* Garante que o body ocupe, no mínimo, toda a altura da tela. */
+}
+
+/* Estilos para as seções principais para melhor visualização */
+header, nav, main, footer {
+    padding: 20px;
+}
+
+header {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+}
+
+/* --- CONCEITO 2: Barra de Navegação Horizontal --- */
+nav ul {
+    display: flex;              /* Transforma a lista <ul> em um flex container. */
+    justify-content: center;    /* Centraliza os itens (os <li>) no eixo principal (horizontal). */
+    gap: 30px;                  /* Adiciona um espaço consistente entre os itens. */
+    
+    /* Estilos para remover a aparência padrão de lista */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* --- CONCEITO 3: Conteúdo Principal Flexível --- */
+main {
+    background-color: #fff;
+    /* A "mágica" do layout de página inteira! */
+    /* flex-grow: 1; faz com que este elemento "cresça" e ocupe todo o espaço 
+       vertical disponível, empurrando o footer para o final da página. */
+    flex-grow: 1;
+}
+
+/* --- ESTILOS PARA A PÁGINA DE EXPLICAÇÃO --- */
+
+main {
+    padding: 20px 40px; /* Mais espaço lateral para o conteúdo */
+}
+
+.explanation-section {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.explanation-section h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    color: #0056b3;
+}
+
+.explanation-section h4 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: monospace;
+}
+
+/* Container base para todos os exemplos visuais */
+.flex-example-container {
+    background-color: #e9ecef;
+    border: 2px dashed #adb5bd;
+    border-radius: 4px;
+    padding: 10px;
+    min-height: 60px;
+    display: flex; /* A base de tudo! */
+    gap: 10px;
+}
+
+/* Item base para todos os exemplos visuais */
+.flex-item {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* --- EXEMPLOS ESPECÍFICOS --- */
+
+/* 1. flex-direction */
+.direction-row { flex-direction: row; }
+.direction-column { flex-direction: column; }
+
+/* 2. justify-content */
+.justify-flex-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-space-between { justify-content: space-between; }
+.justify-space-around { justify-content: space-around; }
+
+/* 3. align-items */
+.align-stretch { align-items: stretch; }
+.align-center { align-items: center; }
+.align-flex-end { align-items: flex-end; }
+
+/* 4. flex-grow (propriedade do item) */
+.grow-1 {
+    flex-grow: 1;
+    background-color: #17a2b8;
+}
+.grow-2 {
+    flex-grow: 2;
+    background-color: #28a745;
+}
+
+/* 5. flex-wrap */
+.wrap-example {
+    flex-wrap: wrap;
+}
+
+/* 6. order (propriedade do item) */
+.order-1 {
+    order: 1;
+    background-color: #6f42c1;
+}
+.order-2 {
+    order: 2;
+    background-color: #dc3545;
+}
+.order-3 {
+    order: 3;
+    background-color: #fd7e14;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+}

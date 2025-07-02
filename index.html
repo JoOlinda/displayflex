@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Exemplo de Flexbox</title>
+        <meta name="description" content="Um projeto simples para explicar Flexbox.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Logo</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Guia Interativo de Flexbox</h2>
+            <p>Explore as principais propriedades do Flexbox com exemplos visuais. Cada seção abaixo demonstra um conceito diferente, aplicado a um container cinza e seus itens azuis.</p>
+
+            <!-- 1. flex-direction -->
+            <section class="explanation-section">
+                <h3>1. Direção dos Itens (<code>flex-direction</code>)</h3>
+                <p>Define a direção em que os itens são organizados. O padrão é <code>row</code> (linha).</p>
+                
+                <h4><code>flex-direction: row;</code> (Padrão)</h4>
+                <div class="flex-example-container direction-row">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+
+                <h4><code>flex-direction: column;</code></h4>
+                <div class="flex-example-container direction-column">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+            </section>
+
+            <!-- 2. justify-content -->
+            <section class="explanation-section">
+                <h3>2. Alinhamento no Eixo Principal (<code>justify-content</code>)</h3>
+                <p>Distribui os itens ao longo do eixo principal (a linha, no nosso caso).</p>
+
+                <h4><code>justify-content: flex-start;</code> (Padrão)</h4>
+                <div class="flex-example-container justify-flex-start"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+
+                <h4><code>justify-content: center;</code></h4>
+                <div class="flex-example-container justify-center"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+
+                <h4><code>justify-content: space-between;</code></h4>
+                <div class="flex-example-container justify-space-between"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+
+                <h4><code>justify-content: space-around;</code></h4>
+                <div class="flex-example-container justify-space-around"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+            </section>
+
+            <!-- 3. align-items -->
+            <section class="explanation-section">
+                <h3>3. Alinhamento no Eixo Cruzado (<code>align-items</code>)</h3>
+                <p>Alinha os itens no eixo perpendicular (a coluna, no nosso caso). Para ver o efeito, o container precisa de uma altura definida.</p>
+
+                <h4><code>align-items: stretch;</code> (Padrão)</h4>
+                <div class="flex-example-container align-stretch" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+
+                <h4><code>align-items: center;</code></h4>
+                <div class="flex-example-container align-center" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+
+                <h4><code>align-items: flex-end;</code></h4>
+                <div class="flex-example-container align-flex-end" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+            </section>
+
+            <!-- 4. flex-grow -->
+            <section class="explanation-section">
+                <h3>4. Crescimento do Item (<code>flex-grow</code>)</h3>
+                <p>Permite que um item "cresça" para ocupar o espaço livre no container. É uma propriedade do <strong>item</strong>, não do container.</p>
+                <p>Abaixo, o item 2 tem <code>flex-grow: 2</code> e os outros têm <code>flex-grow: 1</code>. Ele ocupará o dobro do espaço livre que os outros.</p>
+                <div class="flex-example-container">
+                    <div class="flex-item grow-1">Item 1 (grow: 1)</div>
+                    <div class="flex-item grow-2">Item 2 (grow: 2)</div>
+                    <div class="flex-item grow-1">Item 3 (grow: 1)</div>
+                </div>
+            </section>
+
+            <!-- 5. flex-wrap -->
+            <section class="explanation-section">
+                <h3>5. Quebra de Linha (<code>flex-wrap</code>)</h3>
+                <p>Por padrão, os itens tentam caber em uma única linha. Com <code>flex-wrap: wrap;</code>, eles quebram para a linha seguinte quando não há mais espaço.</p>
+                <div class="flex-example-container wrap-example">
+                    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div><div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+                </div>
+            </section>
+
+            <!-- 6. order -->
+            <section class="explanation-section">
+                <h3>6. Ordem dos Itens (<code>order</code>)</h3>
+                <p>Muda a ordem visual de um item sem alterar o HTML. Por padrão, todos têm <code>order: 0</code>. Números menores vêm primeiro.</p>
+                <p>No HTML: Item A, Item B, Item C. Visualmente, a ordem é B, A, C.</p>
+                <div class="flex-example-container">
+                    <div class="flex-item order-2">Item A (order: 2)</div>
+                    <div class="flex-item order-1">Item B (order: 1)</div>
+                    <div class="flex-item order-3">Item C (order: 3)</div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Rodapé - Sempre no final da página.</p>
+        </footer>
+    </body>
+</html>
