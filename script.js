@@ -22,20 +22,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função que será chamada quando uma seção entrar ou sair da área de observação
     const handleIntersection = (entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Remove as classes ativas de todos os links e seções
-                navLinks.forEach(link => link.classList.remove('active'));
-                sections.forEach(section => section.classList.remove('section-active'));
+        // Encontra a primeira (e geralmente única) entrada que está visível na área definida
+        const visibleSection = entries.find(entry => entry.isIntersecting);
 
-                // Adiciona a classe ativa ao link e à seção correspondente
-                const activeLink = navLinkMap.get(entry.target.id);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-                entry.target.classList.add('section-active');
+        if (visibleSection) {
+            // Primeiro, remove a classe ativa de todos os links e seções
+            navLinks.forEach(link => link.classList.remove('active'));
+            sections.forEach(section => section.classList.remove('section-active'));
+
+            // Adiciona a classe ativa apenas ao link e à seção correspondente que está visível
+            const activeLink = navLinkMap.get(visibleSection.target.id);
+            if (activeLink) {
+                activeLink.classList.add('active');
             }
-        });
+            visibleSection.target.classList.add('section-active');
+        }
     };
 
     // Cria e inicia o observador para cada seção

@@ -28,21 +28,22 @@
             <h2>Guia Interativo de Flexbox</h2>
             <p>Explore as principais propriedades do Flexbox com exemplos visuais. Cada seção abaixo demonstra um conceito diferente, aplicado a um container cinza e seus itens azuis.</p>
 
-            <!-- 1. flex-direction -->
             <section id="prop-direction" class="explanation-section">
                 <h3>1. Direção dos Itens (<code>flex-direction</code>)</h3>
                 <p>Define a direção em que os itens são organizados. O padrão é <code>row</code> (linha).</p>
                 
                 <h4>Antes (Layout Padrão de Bloco)</h4>
                 <div class="example-container-before">
-                    <div class="flex-item">1</div>
-                    <div class="flex-item">2</div>
-                    <div class="flex-item">3</div>
+                    <div class="default-item">1</div>
+                    <div class="default-item">2</div>
+                    <div class="default-item">3</div>
                 </div>
 
                 <h4>Depois (<code>flex-direction: row;</code>)</h4>
                 <div class="flex-example-container direction-row">
-                    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div>
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
                 </div>
 
                 <h4>Depois (<code>flex-direction: column;</code>)</h4>
@@ -53,40 +54,65 @@
                 </div>
             </section>
 
-            <!-- 2. justify-content -->
             <section id="prop-justify" class="explanation-section">
                 <h3>2. Alinhamento no Eixo Principal (<code>justify-content</code>)</h3>
                 <p>Distribui os itens ao longo do eixo principal (a linha, no nosso caso).</p>
 
                 <h4>Antes (Padrão Flex: <code>justify-content: flex-start;</code>)</h4>
-                <div class="flex-example-container justify-flex-start"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container justify-flex-start">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>justify-content: center;</code>)</h4>
-                <div class="flex-example-container justify-center"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container justify-center">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>justify-content: space-between;</code>)</h4>
-                <div class="flex-example-container justify-space-between"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container justify-space-between">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>justify-content: space-around;</code>)</h4>
-                <div class="flex-example-container justify-space-around"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container justify-space-around">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
             </section>
 
-            <!-- 3. align-items -->
             <section id="prop-align" class="explanation-section">
                 <h3>3. Alinhamento no Eixo Cruzado (<code>align-items</code>)</h3>
                 <p>Alinha os itens no eixo perpendicular (a coluna, no nosso caso). Para ver o efeito, o container precisa de uma altura definida.</p>
 
                 <h4>Antes (Padrão Flex: <code>align-items: stretch;</code>)</h4>
-                <div class="flex-example-container align-stretch" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container align-stretch align-container-height">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item align-item-small-font">2</div>
+                    <div class="flex-item">3</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>align-items: center;</code>)</h4>
-                <div class="flex-example-container align-center" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container align-center align-container-height">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item align-item-small-font">2</div>
+                    <div class="flex-item">3</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>align-items: flex-end;</code>)</h4>
-                <div class="flex-example-container align-flex-end" style="height: 120px;"><div class="flex-item">1</div><div class="flex-item" style="font-size: 0.8em;">2</div><div class="flex-item">3</div></div>
+                <div class="flex-example-container align-flex-end align-container-height">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item align-item-small-font">2</div>
+                    <div class="flex-item">3</div>
+                </div>
             </section>
 
-            <!-- 4. flex-grow -->
             <section id="prop-grow" class="explanation-section">
                 <h3>4. Crescimento do Item (<code>flex-grow</code>)</h3>
                 <p>Permite que um item "cresça" para ocupar o espaço livre no container. É uma propriedade do <strong>item</strong>, não do container.</p>
@@ -106,21 +132,31 @@
                 </div>
             </section>
 
-            <!-- 5. flex-wrap -->
             <section id="prop-wrap" class="explanation-section">
                 <h3>5. Quebra de Linha (<code>flex-wrap</code>)</h3>
                 <p>Por padrão, os itens tentam caber em uma única linha. Com <code>flex-wrap: wrap;</code>, eles quebram para a linha seguinte quando não há mais espaço.</p>
 
                 <h4>Antes (Padrão Flex: <code>flex-wrap: nowrap;</code>)</h4>
-                <div class="flex-example-container"><div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div><div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div></div>
+                <div class="flex-example-container">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                    <div class="flex-item">4</div>
+                    <div class="flex-item">5</div>
+                    <div class="flex-item">6</div>
+                </div>
 
                 <h4>Depois (Aplicando <code>flex-wrap: wrap;</code>)</h4>
                 <div class="flex-example-container wrap-example">
-                    <div class="flex-item">1</div><div class="flex-item">2</div><div class="flex-item">3</div><div class="flex-item">4</div><div class="flex-item">5</div><div class="flex-item">6</div>
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                    <div class="flex-item">4</div>
+                    <div class="flex-item">5</div>
+                    <div class="flex-item">6</div>
                 </div>
             </section>
 
-            <!-- 6. order -->
             <section id="prop-order" class="explanation-section">
                 <h3>6. Ordem dos Itens (<code>order</code>)</h3>
                 <p>Muda a ordem visual de um item sem alterar o HTML. Por padrão, todos têm <code>order: 0</code>. Números menores vêm primeiro.</p>
@@ -140,7 +176,6 @@
                 </div>
             </section>
 
-            <!-- 7. flex-shrink -->
             <section id="prop-shrink" class="explanation-section">
                 <h3>7. Encolhimento do Item (<code>flex-shrink</code>)</h3>
                 <p>Define a capacidade de um item encolher se necessário, quando não há espaço suficiente no container. O padrão é <code>1</code>. Um valor <code>0</code> impede o encolhimento.</p>
@@ -148,32 +183,31 @@
 
                 <h4>Antes (Itens com <code>flex-basis</code> e <code>flex-shrink: 1</code> padrão)</h4>
                 <div class="flex-example-container">
-                    <div class="flex-item" style="flex-basis: 150px;">Item 1</div>
-                    <div class="flex-item" style="flex-basis: 150px;">Item 2</div>
-                    <div class="flex-item" style="flex-basis: 150px;">Item 3</div>
+                    <div class="flex-item shrink-item-basis">Item 1</div>
+                    <div class="flex-item shrink-item-basis">Item 2</div>
+                    <div class="flex-item shrink-item-basis">Item 3</div>
                 </div>
                 <h4>Depois (Controlando o <code>flex-shrink</code>)</h4>
                 <div class="flex-example-container">
-                    <div class="flex-item shrink-1">Item 1 (shrink: 1)</div>
-                    <div class="flex-item shrink-2">Item 2 (shrink: 2)</div>
-                    <div class="flex-item shrink-0">Item 3 (shrink: 0)</div>
+                    <div class="flex-item shrink-1 shrink-item-basis">Item 1 (shrink: 1)</div>
+                    <div class="flex-item shrink-2 shrink-item-basis">Item 2 (shrink: 2)</div>
+                    <div class="flex-item shrink-0 shrink-item-basis">Item 3 (shrink: 0)</div>
                 </div>
             </section>
 
-            <!-- 8. align-self -->
             <section id="prop-self" class="explanation-section">
                 <h3>8. Auto-alinhamento do Item (<code>align-self</code>)</h3>
                 <p>Permite que um item específico anule o <code>align-items</code> definido no container. É uma propriedade do <strong>item</strong>.</p>
                 <p>O container abaixo tem <code>align-items: center</code>, mas o Item 2 está alinhado ao início (<code>flex-start</code>) e o Item 3 ao fim (<code>flex-end</code>).</p>
 
                 <h4>Antes (Todos os itens obedecem <code>align-items: center</code>)</h4>
-                <div class="flex-example-container align-center" style="height: 120px;">
+                <div class="flex-example-container align-center align-container-height">
                     <div class="flex-item">Item 1</div>
                     <div class="flex-item">Item 2</div>
                     <div class="flex-item">Item 3</div>
                 </div>
                 <h4>Depois (Aplicando <code>align-self</code> nos itens 2 e 3)</h4>
-                <div class="flex-example-container align-center" style="height: 120px;">
+                <div class="flex-example-container align-center align-container-height">
                     <div class="flex-item">Item 1 (padrão)</div>
                     <div class="flex-item self-start">Item 2 (self: start)</div>
                     <div class="flex-item self-end">Item 3 (self: end)</div>
