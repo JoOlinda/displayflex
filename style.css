@@ -1,3 +1,4 @@
+/* --- CSS para o projeto de Flexbox --- */
 /* Reset básico e estilos gerais do corpo da página */
 html {
     /* Habilita a rolagem suave para links de âncora em toda a página */
@@ -70,10 +71,7 @@ nav ul li a.active {
 /* --- CONCEITO 3: Conteúdo Principal Flexível --- */
 main {
     background-color: #fff;
-    /* A "mágica" do layout de página inteira! */
-    /* flex-grow: 1; faz com que este elemento "cresça" e ocupe todo o espaço 
-       vertical disponível, empurrando o footer para o final da página. */
-    flex-grow: 1;
+    flex-grow: 1; /* Faz o main crescer e empurrar o footer para baixo */
 }
 
 /* --- ESTILOS PARA A PÁGINA DE EXPLICAÇÃO --- */
@@ -116,9 +114,33 @@ main {
     display: inline-block;
 }
 
-/* Estilos base compartilhados pelos containers "Antes" e "Depois" */
-.example-container-before,
+/* --- ESTRUTURA DOS EXEMPLOS --- */
+
+/* Estilos para o container "Antes" (layout padrão) */
+.example-container-before {
+    background-color: #e9ecef;
+    border: 2px dashed #adb5bd;
+    border-radius: 4px;
+    padding: 10px;
+    min-height: 60px;
+    display: grid; /* Usar Grid simplifica o espaçamento entre blocos */
+    gap: 10px;
+}
+
+/* Estilo para o item padrão, ANTES de aplicar flexbox */
+.default-item {
+    background-color: #007bff; /* COR ALTERADA PARA AZUL */
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Container "Depois", que recebe as propriedades flex */
 .flex-example-container {
+    display: flex;
+    gap: 10px;
     background-color: #e9ecef;
     border: 2px dashed #adb5bd;
     border-radius: 4px;
@@ -126,18 +148,7 @@ main {
     min-height: 60px;
 }
 
-/* O container "Antes" não tem flexbox, então os itens se comportam como blocos padrão */
-.example-container-before .flex-item:not(:last-child) {
-    margin-bottom: 10px; /* Adiciona espaço vertical para simular o 'gap' */
-}
-
-/* Apenas o container "Depois" recebe as propriedades flex */
-.flex-example-container {
-    display: flex;
-    gap: 10px;
-}
-
-/* Item base para todos os exemplos visuais */
+/* Item base para todos os exemplos visuais de flexbox */
 .flex-item {
     background-color: #007bff;
     color: white;
@@ -146,6 +157,18 @@ main {
     text-align: center;
     font-weight: bold;
 }
+
+/* --- CLASSES DE UTILIDADE (PARA REMOVER ESTILOS INLINE) --- */
+.align-container-height {
+    height: 120px;
+}
+.align-item-small-font {
+    font-size: 0.8em;
+}
+.shrink-item-basis {
+    flex-basis: 150px;
+}
+
 
 /* --- EXEMPLOS ESPECÍFICOS --- */
 
@@ -165,61 +188,26 @@ main {
 .align-flex-end { align-items: flex-end; }
 
 /* 4. flex-grow (propriedade do item) */
-.grow-1 {
-    flex-grow: 1;
-    background-color: #17a2b8;
-}
-.grow-2 {
-    flex-grow: 2;
-    background-color: #28a745;
-}
+.grow-1 { flex-grow: 1; background-color: #17a2b8; }
+.grow-2 { flex-grow: 2; background-color: #28a745; }
 
 /* 5. flex-wrap */
-.wrap-example {
-    flex-wrap: wrap;
-}
+.wrap-example { flex-wrap: wrap; }
 
 /* 6. order (propriedade do item) */
-.order-1 {
-    order: 1;
-    background-color: #6f42c1;
-}
-.order-2 {
-    order: 2;
-    background-color: #dc3545;
-}
-.order-3 {
-    order: 3;
-    background-color: #fd7e14;
-}
+.order-1 { order: 1; background-color: #6f42c1; }
+.order-2 { order: 2; background-color: #dc3545; }
+.order-3 { order: 3; background-color: #fd7e14; }
 
 /* 7. flex-shrink (propriedade do item) */
-.shrink-0, .shrink-1, .shrink-2 {
-    flex-basis: 150px; /* Base de tamanho para forçar o encolhimento */
-}
-.shrink-0 {
-    flex-shrink: 0;
-    background-color: #dc3545;
-}
-.shrink-1 {
-    flex-shrink: 1;
-    background-color: #17a2b8;
-}
-.shrink-2 {
-    flex-shrink: 2;
-    background-color: #ffc107;
-    color: #333;
-}
+.shrink-0 { flex-shrink: 0; background-color: #dc3545; }
+.shrink-1 { flex-shrink: 1; background-color: #17a2b8; }
+.shrink-2 { flex-shrink: 2; background-color: #ffc107; color: #333; }
 
 /* 8. align-self (propriedade do item) */
-.self-start {
-    align-self: flex-start;
-    background-color: #6f42c1;
-}
-.self-end {
-    align-self: flex-end;
-    background-color: #fd7e14;
-}
+.self-start { align-self: flex-start; background-color: #6f42c1; }
+.self-end { align-self: flex-end; background-color: #fd7e14; }
+
 
 footer {
     background-color: #333;
@@ -235,30 +223,19 @@ code {
 }
 
 /* --- ESTILOS RESPONSIVOS --- */
-/* As regras dentro deste bloco só serão aplicadas em telas com 768px de largura ou menos. */
 @media (max-width: 768px) {
-
-    /* 1. Ajusta o conteúdo principal */
     main {
-        /* Reduz o espaçamento lateral para dar mais espaço ao conteúdo. */
         padding: 20px 15px;
     }
-
-    /* 2. Ajusta a barra de navegação */
     nav ul {
-        /* Reduz o espaço entre os links do menu para que caibam melhor. */
-        gap: 10px 15px; /* Gap vertical e horizontal */
+        gap: 10px 15px;
     }
-
     nav ul li a {
-        /* Diminui um pouco a fonte dos links para economizar espaço. */
         font-size: 0.95em;
     }
-
-    /* 3. Ajusta os itens de exemplo para evitar overflow */
-    .flex-item {
-        /* Reduz o padding e a fonte para que o texto não quebre de forma estranha. */
+    .flex-item, .default-item {
         padding: 10px 8px;
         font-size: 0.9em;
     }
 }
+/* --- FIM DO CSS --- */
